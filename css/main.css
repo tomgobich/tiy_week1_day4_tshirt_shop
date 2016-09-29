@@ -22,6 +22,30 @@ img {
 	max-width: 100%;
 }
 
+@keyframes slideIn {
+	  0% { 
+	  	margin-top: -50px; 
+	  	opacity: 0;
+	  }
+
+	100% { 
+		margin-top:   0px; 
+		opacity: 1;
+	}
+}
+
+@keyframes slideOut {
+	  0% {
+	  	margin-top: 0px;
+	  	opacity: 1;
+	  }
+
+	  100% {
+	  	margin-top: -50px;
+	  	opacity: 0;
+	  }
+}
+
 .container {
 	width: 990px;
 	margin: 0 auto;
@@ -48,6 +72,8 @@ img {
 
 	.preview img {
 		width: 470px;
+		margin: 0 auto;
+		display: block;
 	}
 
 .carrot {
@@ -91,10 +117,14 @@ img {
 		    left: -6px;
 		    display: none;
 		    z-index: 999;
+		    animation-name: slideOut;
+		    animation-duration: 0.3s;
 		}
 
 			.icon.size:hover .size-menu {
 				display: block;
+				animation-name: slideIn;
+		    	animation-duration: 0.3s;
 			}
 
 			.icon.size .size-menu .size-option {
@@ -132,11 +162,11 @@ img {
 		.icon.color .selected {
 			width: 18px;
 			height: 18px;
-			margin: 0 auto;
+			margin: 0 0 0 -9px;
 		    padding: 5px 0;
 		    position: absolute;
 		    top: 12px;
-		    left: 20px;
+		    left: 50%;
 		}
 
 			.icon.color .selected.blue {
@@ -232,3 +262,13 @@ img {
 			text-align: right;
 			font-weight: 700;
 		}
+
+@media screen and (max-width: 990px) {
+	.container {
+		width: 100%;
+	}
+
+	.column {
+		width: 100%;
+	}
+}
