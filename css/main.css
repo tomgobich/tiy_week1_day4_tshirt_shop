@@ -22,30 +22,6 @@ img {
 	max-width: 100%;
 }
 
-@keyframes slideIn {
-	  0% { 
-	  	margin-top: -50px; 
-	  	opacity: 0;
-	  }
-
-	100% { 
-		margin-top:   0px; 
-		opacity: 1;
-	}
-}
-
-@keyframes slideOut {
-	  0% {
-	  	margin-top: 0px;
-	  	opacity: 1;
-	  }
-
-	  100% {
-	  	margin-top: -50px;
-	  	opacity: 0;
-	  }
-}
-
 .container {
 	width: 990px;
 	margin: 0 auto;
@@ -63,6 +39,11 @@ img {
 	border: 2px solid #69addc;
 	position: relative;
 }
+
+	.item, .details {
+		max-width: 500px;
+		margin: 0 auto;
+	}
 
 .preview {
 	width: 100%;
@@ -108,23 +89,24 @@ img {
 	}
 
 		.icon.size .size-menu {
-			width: 70px;
+			width: 68px;
 		    background-color: #fefefe;
-		    padding: 14px 19px;
+		    padding: 14px 17px;
 		    border: 2px solid #69addc;
 		    position: absolute;
-		    top: -128px;
-		    left: -6px;
-		    display: none;
+		    top: -135px;
+		    left: 50%;
+		    margin-left: -34px;
+		    opacity: 0;
 		    z-index: 999;
-		    animation-name: slideOut;
-		    animation-duration: 0.3s;
+		    animation: slideOut 0.3s;
+		    -webkit-animation: slideOut 0.3s;
 		}
 
 			.icon.size:hover .size-menu {
-				display: block;
-				animation-name: slideIn;
-		    	animation-duration: 0.3s;
+		    	animation: slideIn 0.3s;
+		    	-webkit-animation: slideIn 0.3s;
+		    	opacity: 1;
 			}
 
 			.icon.size .size-menu .size-option {
@@ -196,13 +178,18 @@ img {
 		    border: 2px solid #69addc;
 		    position: absolute;
 		    top: -84px;
-		    left: -14px;
-		    display: none;
+		    left: 50%;
+		    margin-left: -44px;
+		    opacity: 0;
 		    z-index: 999;
+		    animation: slideOut 0.3s;
+		    -webkit-animation: slideOut 0.3s;
 		}
 
 			.icon.color:hover .color-menu {
-				display: block;
+				opacity: 1;
+				animation: slideIn 0.3s;
+				-webkit-animation: slideIn 0.3s;
 			}
 
 			.color-menu .carrot {
@@ -271,4 +258,48 @@ img {
 	.column {
 		width: 100%;
 	}
+}
+
+@keyframes slideIn {
+	0% { 
+	  	margin-top: -50px; 
+	  }
+
+	100% { 
+		margin-top: 0; 
+	}
+}
+
+@-webkit-keyframes slideIn {
+	0% { 
+	  	margin-top: -50px; 
+	  }
+
+	100% { 
+		margin-top: 0; 
+	}
+}
+
+@keyframes slideOut {
+	  0% {
+	  	margin-top: 0px;
+	  	opacity: 1;
+	  }
+
+	  100% {
+	  	margin-top: -50px;
+	  	opacity: 0;
+	  }
+}
+
+@-webkit-keyframes slideOut {
+	  0% {
+	  	margin-top: 0px;
+	  	opacity: 1;
+	  }
+
+	  100% {
+	  	margin-top: -50px;
+	  	opacity: 0;
+	  }
 }
