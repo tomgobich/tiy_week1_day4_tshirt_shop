@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     background-color: #fefefe;
@@ -94,9 +99,12 @@ img {
 	width: 0px;
     height: 0px;
     position: absolute;
+    bottom: -10px;
+    left: 50%;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid #fefefe;
+    margin-left: -10px;
 }
 
 .icon {
@@ -122,14 +130,14 @@ img {
 	}
 
 		.icon.size .size-menu {
-			width: 68px;
+			width: 118%;
 		    background-color: #fefefe;
-		    padding: 14px 17px;
+		    padding: 25%;
 		    border: 2px solid #69addc;
 		    position: absolute;
-		    top: -135px;
+		    bottom: 42px;
 		    left: 50%;
-		    margin-left: -34px;
+		    margin-left: -59%;
 		    display: none;
 		    z-index: 999;
 		    animation: slideUp 0.3s;
@@ -160,11 +168,6 @@ img {
 			.icon.size .size-menu .size-option.small {
 				width: 70%;
 			}
-
-		.icon.size .size-menu .carrot {
-			bottom: -10px;
-    		left: 22px;
-		}
 
 	.icon.color {
 	    position: relative;
@@ -203,14 +206,14 @@ img {
 		}
 
 		.icon.color .color-menu {
-			width: 88px;
+			width: 145%;
 		    background-color: #fefefe;
-		    padding: 6px;
+		    padding: 6%;
 		    border: 2px solid #69addc;
 		    position: absolute;
-		    top: -84px;
+		    bottom: 42px;
 		    left: 50%;
-		    margin-left: -44px;
+		    margin-left: -72.5%;
 			display: none;
 		    z-index: 999;
 		    animation: slideUp 0.3s;
@@ -221,16 +224,11 @@ img {
 				animation: slideDown 0.3s;
 			}
 
-			.color-menu .carrot {
-			    bottom: -10px;
-			    left: 31px;
-			}
-
 			.color-menu .color-option {
-				width: 28px;
-			    height: 28px;
-			    display: inline-block;
-			    margin: 3px 3px 1px;
+				width: 38%;
+			    padding-bottom: 38%;
+			    margin: 6%;
+			    float: left;
 			}
 
 				.color-menu .color-option.one {
