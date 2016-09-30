@@ -73,7 +73,7 @@ img {
 			position: absolute;
 	  		top: 0;
 	  		left: 0;
-			z-index: -999;
+	  		z-index: -999;
 		}
 
 			.preview:hover img.back {
@@ -129,14 +129,14 @@ img {
 		    top: -135px;
 		    left: 50%;
 		    margin-left: -34px;
-		    opacity: 0;
+		    display: none;
 		    z-index: 999;
-		    animation: slideOut 0.3s;
+		    animation: slideUp 0.3s;
 		}
 
 			.icon.size:hover .size-menu {
-		    	animation: slideIn 0.3s;
-		    	opacity: 1;
+		    	animation: slideDown 0.3s;
+		    	display: block;
 			}
 
 			.icon.size .size-menu .size-option {
@@ -210,14 +210,14 @@ img {
 		    top: -84px;
 		    left: 50%;
 		    margin-left: -44px;
-		    opacity: 0;
+			display: none;
 		    z-index: 999;
-		    animation: slideOut 0.3s;
+		    animation: slideUp 0.3s;
 		}
 
 			.icon.color:hover .color-menu {
-				opacity: 1;
-				animation: slideIn 0.3s;
+				display: block;
+				animation: slideDown 0.3s;
 			}
 
 			.color-menu .carrot {
@@ -279,24 +279,28 @@ img {
 	}
 }
 
-@keyframes slideIn {
+@keyframes slideDown {
 	0% { 
 	  	margin-top: -50px; 
+	  	opacity: 0;
 	  }
+
+  	10% {
+  		opacity: 0;
+  	}
 
 	100% { 
 		margin-top: 0; 
+		opacity: 1;
 	}
 }
 
-@keyframes slideOut {
+@keyframes slideUp {
 	  0% {
 	  	margin-top: 0px;
-	  	opacity: 1;
 	  }
 
 	  100% {
 	  	margin-top: -50px;
-	  	opacity: 0;
 	  }
 }
