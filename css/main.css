@@ -47,14 +47,46 @@ img {
 
 .preview {
 	width: 100%;
-	padding: 20px;
 	border-bottom: 2px solid #69addc;
+	position: relative;
 }
 
 	.preview img {
 		width: 470px;
 		margin: 0 auto;
 		display: block;
+		transform-style: preserve-3d;
+  		transition: all 1.0s linear;
+		padding: 20px;
+	}
+
+		.preview img.face {
+			backface-visibility: hidden;
+		}
+
+			.preview:hover img.face {
+				transform: rotateY(180deg);
+			}
+
+		.preview img.back {
+			transform: rotateY(180deg);
+			position: absolute;
+	  		top: 0;
+	  		left: 0;
+			z-index: -999;
+		}
+
+			.preview:hover img.back {
+				transform: rotateY(0deg);
+			}
+
+	.preview .flip {
+		border-left: 2px solid #69addc;
+		border-bottom: 2px solid #69addc;
+		padding: 3px;
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 
 .carrot {
@@ -215,15 +247,6 @@ img {
 				.color-menu .color-option.four {
 					background-color: #78ae7e;
 				}
-
-.flip {
-	border-left: 2px solid #69addc;
-	border-bottom: 2px solid #69addc;
-	padding: 3px;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
 
 .details {
 	padding: 10px 0;
