@@ -24,6 +24,7 @@ img {
 
 .container {
 	width: 990px;
+	min-width: 270px;
 	margin: 0 auto;
 }
 
@@ -136,7 +137,7 @@ img {
 
 			.icon.size:hover .size-menu {
 		    	animation: slideDown 0.3s;
-		    	display: block;
+		    	display: unset;
 			}
 
 			.icon.size .size-menu .size-option {
@@ -216,7 +217,7 @@ img {
 		}
 
 			.icon.color:hover .color-menu {
-				display: block;
+				display: unset;
 				animation: slideDown 0.3s;
 			}
 
