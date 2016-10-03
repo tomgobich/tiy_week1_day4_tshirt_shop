@@ -47,13 +47,13 @@ img {
   display: inline-block; }
 
 .carrot {
-  width: 0px;
-  height: 0px;
   position: absolute;
   bottom: -10px;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid #fefefe;
+  width: 0px;
+  height: 0px;
   margin-left: -10px;
   left: 50%; }
 
@@ -144,13 +144,13 @@ img {
     padding: 21px 0;
     vertical-align: bottom; }
     .icon.color .selected {
-      width: 18px;
-      height: 18px;
       padding: 5px 0;
       position: absolute;
       top: 12px;
       margin-left: -9px;
-      left: 50%; }
+      left: 50%;
+      width: 18px;
+      height: 18px; }
       .icon.color .selected.blue {
         background-color: #81bce6; }
       .icon.color .selected.pink {

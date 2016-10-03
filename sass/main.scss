@@ -6,6 +6,11 @@
 	left: 50%;
 }
 
+@mixin squareElement($size) {
+	width: $size;
+	height: $size;
+}
+
 
 
 // Global Styles
@@ -52,13 +57,12 @@ img {
 }
 
 .carrot {
-	width: 0px;
-    height: 0px;
     position: absolute;
     bottom: -10px;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid $main-bg-color;
+    @include squareElement(0px);
     @include centerPositionedElement(20px);
 }
 
@@ -206,12 +210,11 @@ img {
 	    vertical-align: bottom;
 
 	    .selected {
-			width: 18px;
-			height: 18px;
 		    padding: 5px 0;
 		    position: absolute;
 		    top: 12px;
 		    @include centerPositionedElement(18px);
+		    @include squareElement(18px);
 
 		    &.blue {
 				background-color: $shirt-color-blue;
