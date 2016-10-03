@@ -1,214 +1,42 @@
-@keyframes slideDown {
-  0% {
-    bottom: 100px;
-    opacity: 0; }
-  10% {
-    opacity: 0; }
-  100% {
-    bottom: 42px;
-    opacity: 1; } }
-@keyframes slideUp {
-  0% {
-    bottom: 42px; }
-  100% {
-    bottom: 100px; } }
-* {
-  box-sizing: border-box; }
+/*
+Error: Invalid CSS after "}": expected "}", was ""
+        on line 300 of sass/main.scss
 
-html, body {
-  height: 100%;
-  width: 100%; }
+295: 	}
+296: 
+297: 	.column {
+298: 		width: 100%;
+299: 	}
+300: }
 
-body {
-  font-family: 'Lato', sans-serif;
-  background-color: #fefefe; }
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.4em; }
-
-img {
-  max-width: 100%; }
-
-.container {
-  width: 990px;
-  min-width: 270px;
-  margin: 0 auto; }
-
-.column {
-  width: 33%;
-  color: #69addc;
-  padding: 10px;
-  display: inline-block; }
-
-.item {
-  width: 100%;
-  border: 2px solid #69addc;
-  position: relative; }
-  .item .details {
-    max-width: 500px;
-    margin: 0 auto; }
-
-.preview {
-  width: 100%;
-  border-bottom: 2px solid #69addc;
-  position: relative; }
-  .preview img {
-    width: 470px;
-    margin: 0 auto;
-    display: block;
-    transform-style: preserve-3d;
-    transition: all 1.0s linear;
-    padding: 20px; }
-    .preview img.face {
-      backface-visibility: hidden; }
-    .preview img.back {
-      transform: rotateY(180deg);
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -999; }
-  .preview .flip {
-    border-left: 2px solid #69addc;
-    border-bottom: 2px solid #69addc;
-    padding: 3px;
-    position: absolute;
-    top: 0;
-    right: 0; }
-    .preview .flip:hover {
-      background-color: #69addc;
-      color: #fefefe; }
-  .preview:hover img.face {
-    transform: rotateY(180deg); }
-  .preview:hover img.back {
-    transform: rotateY(0deg); }
-
-.carrot {
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  bottom: -10px;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #fefefe;
-  margin-left: -10px;
-  left: 50%; }
-
-.icon {
-  width: 20%;
-  display: inline-block;
-  text-align: center;
-  padding: 13px 0;
-  border-right: 2px solid #69addc; }
-  .icon:hover {
-    background-color: #69addc;
-    color: #fefefe; }
-  .icon:last-child {
-    border: none; }
-  .icon.size {
-    padding: 10px 0;
-    position: relative; }
-    .icon.size .size-menu {
-      width: 118%;
-      background-color: #fefefe;
-      padding: 25%;
-      border: 2px solid #69addc;
-      position: absolute;
-      bottom: 42px;
-      display: none;
-      z-index: 999;
-      animation: slideUp 0.3s;
-      margin-left: -59%;
-      left: 50%; }
-      .icon.size .size-menu .size-option {
-        margin: 0 auto;
-        display: block; }
-        .icon.size .size-menu .size-option.extra-large {
-          width: 100%; }
-        .icon.size .size-menu .size-option.large {
-          width: 90%; }
-        .icon.size .size-menu .size-option.medium {
-          width: 80%; }
-        .icon.size .size-menu .size-option.small {
-          width: 70%; }
-    .icon.size:hover .size-menu {
-      animation: slideDown 0.3s;
-      display: unset; }
-  .icon.color {
-    position: relative;
-    padding: 21px 0;
-    vertical-align: bottom; }
-    .icon.color .selected {
-      width: 18px;
-      height: 18px;
-      padding: 5px 0;
-      position: absolute;
-      top: 12px;
-      margin-left: -9px;
-      left: 50%; }
-      .icon.color .selected.blue {
-        background-color: #81bce6; }
-      .icon.color .selected.pink {
-        background-color: #cb6a97; }
-      .icon.color .selected.orange {
-        background-color: #d6a367; }
-      .icon.color .selected.green {
-        background-color: #78ae7e; }
-    .icon.color .color-menu {
-      width: 145%;
-      background-color: #fefefe;
-      padding: 6%;
-      border: 2px solid #69addc;
-      position: absolute;
-      bottom: 42px;
-      display: none;
-      z-index: 999;
-      animation: slideUp 0.3s;
-      margin-left: -72.5%;
-      left: 50%; }
-      .icon.color .color-menu .color-option {
-        width: 38%;
-        padding-bottom: 38%;
-        margin: 6%;
-        float: left; }
-        .icon.color .color-menu .color-option.one {
-          background-color: #69addc; }
-        .icon.color .color-menu .color-option.two {
-          background-color: #cb6a97; }
-        .icon.color .color-menu .color-option.three {
-          background-color: #d6a367; }
-        .icon.color .color-menu .color-option.four {
-          background-color: #78ae7e; }
-    .icon.color:hover .color-menu {
-      display: unset;
-      animation: slideDown 0.3s; }
-    .icon.color:hover .selected {
-      border: 2px solid #fefefe; }
-
-.details {
-  padding: 10px 0;
-  font-size: 1.2em; }
-  .details p {
-    display: inline-block; }
-    .details p.name {
-      width: 79%;
-      padding-left: 5px;
-      font-weight: 300; }
-    .details p.price {
-      width: 19%;
-      text-align: right;
-      font-weight: 700; }
-
-@media screen and (max-width: 990px) {
-  .container {
-    width: 100%; }
-
-  .column {
-    width: 100%; } }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+sass/main.scss:300
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1120:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:658:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:649:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:675:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:668:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:125:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:406:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 300 of sass/main.scss\A \A 295: 	}\A 296: \A 297: 	.column {\A 298: 		width: 100%;\A 299: 	}\A 300: }"; }

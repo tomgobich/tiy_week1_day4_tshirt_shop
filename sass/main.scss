@@ -6,6 +6,7 @@
 	left: 50%;
 }
 
+// Global Styles
 * {
     box-sizing: border-box;
 }
@@ -47,6 +48,18 @@ img {
 	display: inline-block;
 }
 
+.carrot {
+	width: 0px;
+    height: 0px;
+    position: absolute;
+    bottom: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid $main-bg-color;
+    @include centerPositionedElement(20px);
+}
+
+// Item Styles
 .item {
 	width: 100%;
 	border: $border-size solid $blue-color;
@@ -58,6 +71,7 @@ img {
 	}
 }
 
+// Preview Syles
 .preview {
 	width: 100%;
 	border-bottom: $border-size solid $blue-color;
@@ -98,26 +112,20 @@ img {
 		}
 	}
 
-	&:hover img.face {
-		transform: rotateY(180deg);
-	}
+	&:hover {
+		img {
+			&.face {
+				transform: rotateY(180deg);
+			}
 
-	&:hover img.back {
-		transform: rotateY(0deg);
-	}
+			&.back {
+				transform: rotateY(0deg);
+			}
+		}
+	} 
 }
 
-.carrot {
-	width: 0px;
-    height: 0px;
-    position: absolute;
-    bottom: -10px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid $main-bg-color;
-    @include centerPositionedElement(20px);
-}
-
+// Icon Styles
 .icon {
 	width: 20%;
 	display: inline-block;
@@ -172,10 +180,11 @@ img {
 			}
 		}
 
-		&:hover .size-menu {
-	    	animation: slideDown 0.3s;
-	    	display: unset;
-		}
+		&:hover {
+			.size-menu {
+		    	animation: slideDown 0.3s;
+		    	display: unset;
+			}
 	}
 
 	&.color {
@@ -257,6 +266,7 @@ img {
 	}
 }
 
+// Details Styles
 .details {
 	padding: 10px 0;
 	font-size: 1.2em;
@@ -278,6 +288,7 @@ img {
 	}
 }
 
+// Responsive Styles
 @media screen and (max-width: 990px) {
 	.container {
 		width: 100%;
