@@ -6,7 +6,10 @@
 	left: 50%;
 }
 
+
+
 // Global Styles
+
 * {
     box-sizing: border-box;
 }
@@ -59,7 +62,10 @@ img {
     @include centerPositionedElement(20px);
 }
 
+
+
 // Item Styles
+
 .item {
 	width: 100%;
 	border: $border-size solid $blue-color;
@@ -71,7 +77,10 @@ img {
 	}
 }
 
-// Preview Syles
+
+
+// Preview Styles
+
 .preview {
 	width: 100%;
 	border-bottom: $border-size solid $blue-color;
@@ -125,7 +134,10 @@ img {
 	} 
 }
 
+
+
 // Icon Styles
+
 .icon {
 	width: 20%;
 	display: inline-block;
@@ -185,6 +197,7 @@ img {
 		    	animation: slideDown 0.3s;
 		    	display: unset;
 			}
+		}
 	}
 
 	&.color {
@@ -266,7 +279,10 @@ img {
 	}
 }
 
+
+
 // Details Styles
+
 .details {
 	padding: 10px 0;
 	font-size: 1.2em;
@@ -288,7 +304,10 @@ img {
 	}
 }
 
+
+
 // Responsive Styles
+
 @media screen and (max-width: 990px) {
 	.container {
 		width: 100%;
