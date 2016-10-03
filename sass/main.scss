@@ -1,0 +1,305 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #fefefe;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.4em;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+	width: 990px;
+	min-width: 270px;
+	margin: 0 auto;
+}
+
+.column {
+	width: 33%;
+	color: #69addc;
+	padding: 10px;
+	display: inline-block;
+}
+
+.item {
+	width: 100%;
+	border: 2px solid #69addc;
+	position: relative;
+
+	.details {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+}
+
+.preview {
+	width: 100%;
+	border-bottom: 2px solid #69addc;
+	position: relative;
+
+	img {
+		width: 470px;
+		margin: 0 auto;
+		display: block;
+		transform-style: preserve-3d;
+  		transition: all 1.0s linear;
+		padding: 20px;
+
+		 &.face {
+			backface-visibility: hidden;
+		}
+
+		&.back {
+			transform: rotateY(180deg);
+			position: absolute;
+	  		top: 0;
+	  		left: 0;
+	  		z-index: -999;
+		}
+	}
+
+	.flip {
+		border-left: 2px solid #69addc;
+		border-bottom: 2px solid #69addc;
+		padding: 3px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	&:hover img.face {
+		transform: rotateY(180deg);
+	}
+
+	&:hover img.back {
+		transform: rotateY(0deg);
+	}
+}
+
+.carrot {
+	width: 0px;
+    height: 0px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #fefefe;
+    margin-left: -10px;
+}
+
+.icon {
+	width: 20%;
+	display: inline-block;
+	text-align: center;
+	padding: 13px 0;
+	border-right: 2px solid #69addc;
+}
+
+	.icon:hover, .flip:hover {
+		background-color: #69addc;
+		color: #fefefe;
+	}
+
+	.icon:last-child {
+		border: none;
+	}
+
+	.icon.size {
+		padding: 10px 0;
+		position: relative;
+	}
+
+		.icon.size .size-menu {
+			width: 118%;
+		    background-color: #fefefe;
+		    padding: 25%;
+		    border: 2px solid #69addc;
+		    position: absolute;
+		    bottom: 42px;
+		    left: 50%;
+		    margin-left: -59%;
+		    display: none;
+		    z-index: 999;
+		    animation: slideUp 0.3s;
+		}
+
+			.icon.size:hover .size-menu {
+		    	animation: slideDown 0.3s;
+		    	display: unset;
+			}
+
+			.icon.size .size-menu .size-option {
+				margin: 0 auto;
+				display: block;
+			}
+
+			.icon.size .size-menu .size-option.extra-large {
+				width: 100%;
+			}
+
+			.icon.size .size-menu .size-option.large {
+				width: 90%;
+			}
+
+			.icon.size .size-menu .size-option.medium {
+				width: 80%;
+			}
+
+			.icon.size .size-menu .size-option.small {
+				width: 70%;
+			}
+
+	.icon.color {
+	    position: relative;
+	    padding: 21px 0;
+	    vertical-align: bottom;
+
+	    .selected {
+			width: 18px;
+			height: 18px;
+			margin: 0 0 0 -9px;
+		    padding: 5px 0;
+		    position: absolute;
+		    top: 12px;
+		    left: 50%;
+
+		    &.blue {
+				background-color: #81bce6;
+			}
+
+			&.pink {
+				background-color: #cb6a97;
+			}
+
+			&.orange {
+				background-color: #d6a367;
+			}
+
+			&.green {
+				background-color: #78ae7e;
+			}
+		}
+
+		&:hover .selected {
+			border: 2px solid #fefefe;
+		}
+
+		.color-menu {
+			width: 145%;
+		    background-color: #fefefe;
+		    padding: 6%;
+		    border: 2px solid #69addc;
+		    position: absolute;
+		    bottom: 42px;
+		    left: 50%;
+		    margin-left: -72.5%;
+			display: none;
+		    z-index: 999;
+		    animation: slideUp 0.3s;
+
+		    .color-option {
+				width: 38%;
+			    padding-bottom: 38%;
+			    margin: 6%;
+			    float: left;
+
+			    &.one {
+					background-color: #69addc;
+				}
+
+				&.two {
+					background-color: #cb6a97;
+				}
+
+				&.three {
+					background-color: #d6a367;
+				}
+
+				&.four {
+					background-color: #78ae7e;
+				}
+			}
+		}
+
+		&:hover .color-menu {
+			display: unset;
+			animation: slideDown 0.3s;
+		}
+	}
+
+.details {
+	padding: 10px 0;
+	font-size: 1.2em;
+
+	p {
+		display: inline-block;
+
+		&.name {
+			width: 79%;
+			padding-left: 5px;
+			font-weight: 300;
+		}
+
+		&.price {
+			width: 19%;
+			text-align: right;
+			font-weight: 700;
+		}
+	}
+}
+
+@media screen and (max-width: 990px) {
+	.container {
+		width: 100%;
+	}
+
+	.column {
+		width: 100%;
+	}
+}
+
+@keyframes slideDown {
+	0% { 
+	  	bottom: 100px;
+	  	opacity: 0;
+	  }
+
+  	10% {
+  		opacity: 0;
+  	}
+
+	100% { 
+		bottom: 42px; 
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	  0% {
+	  	bottom: 42px;
+	  }
+
+	  100% {
+	  	bottom: 100px;
+	  }
+}
