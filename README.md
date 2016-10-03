@@ -1,7 +1,7 @@
 # Tailored T-Shirt Shop - SASS + Gulp Refactor
 ##### The Iron Yard - Week 2, Day 1
 
-The purpose of this assignmnet was to gain experience working with SASS and refactoring. We were to take our prior assignment and refactor the CSS into SASS while utilizing the many great features that come packed into SASS like variables, mixins, nesting, and imports.
+The purpose of this assignment was to gain experience working with SASS and refactoring. We were to take our prior assignment and refactor the CSS into SASS while utilizing the many great features that come packed into SASS like variables, mixins, nesting, and imports.
 
 As an addition to the above assignment, which can be found on the refactorSass branch of this repo, I've also refactored it to include a Gulp supported version.
 
