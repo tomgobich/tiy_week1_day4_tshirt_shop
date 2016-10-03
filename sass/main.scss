@@ -1,3 +1,10 @@
+@import '_variables.scss';
+@import '_animations.scss';
+
+@mixin centerPositionedElement($elementWidth) {
+	margin-left: -($elementWidth / 2);
+	left: 50%;
+}
 
 * {
     box-sizing: border-box;
@@ -10,7 +17,7 @@ html, body {
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #fefefe;
+    background-color: $main-bg-color;
 }
 
 p,
@@ -35,14 +42,14 @@ img {
 
 .column {
 	width: 33%;
-	color: #69addc;
+	color: $blue-color;
 	padding: 10px;
 	display: inline-block;
 }
 
 .item {
 	width: 100%;
-	border: 2px solid #69addc;
+	border: $border-size solid $blue-color;
 	position: relative;
 
 	.details {
@@ -53,7 +60,7 @@ img {
 
 .preview {
 	width: 100%;
-	border-bottom: 2px solid #69addc;
+	border-bottom: $border-size solid $blue-color;
 	position: relative;
 
 	img {
@@ -78,12 +85,17 @@ img {
 	}
 
 	.flip {
-		border-left: 2px solid #69addc;
-		border-bottom: 2px solid #69addc;
+		border-left: $border-size solid $blue-color;
+		border-bottom: $border-size solid $blue-color;
 		padding: 3px;
 		position: absolute;
 		top: 0;
 		right: 0;
+
+		&:hover {
+			background-color: $blue-color;
+			color: $main-bg-color;
+		}
 	}
 
 	&:hover img.face {
@@ -100,11 +112,10 @@ img {
     height: 0px;
     position: absolute;
     bottom: -10px;
-    left: 50%;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid #fefefe;
-    margin-left: -10px;
+    border-top: 10px solid $main-bg-color;
+    @include centerPositionedElement(20px);
 }
 
 .icon {
@@ -112,64 +123,62 @@ img {
 	display: inline-block;
 	text-align: center;
 	padding: 13px 0;
-	border-right: 2px solid #69addc;
-}
+	border-right: $border-size solid $blue-color;
 
-	.icon:hover, .flip:hover {
-		background-color: #69addc;
-		color: #fefefe;
+	&:hover {
+		background-color: $blue-color;
+		color: $main-bg-color;
 	}
 
-	.icon:last-child {
+	&:last-child {
 		border: none;
 	}
 
-	.icon.size {
+	&.size {
 		padding: 10px 0;
 		position: relative;
-	}
 
-		.icon.size .size-menu {
+		.size-menu {
 			width: 118%;
-		    background-color: #fefefe;
+		    background-color: $main-bg-color;
 		    padding: 25%;
-		    border: 2px solid #69addc;
+		    border: $border-size solid $blue-color;
 		    position: absolute;
 		    bottom: 42px;
-		    left: 50%;
-		    margin-left: -59%;
 		    display: none;
 		    z-index: 999;
 		    animation: slideUp 0.3s;
-		}
+		    @include centerPositionedElement(118%);
 
-			.icon.size:hover .size-menu {
-		    	animation: slideDown 0.3s;
-		    	display: unset;
-			}
-
-			.icon.size .size-menu .size-option {
+		    .size-option {
 				margin: 0 auto;
 				display: block;
-			}
 
-			.icon.size .size-menu .size-option.extra-large {
-				width: 100%;
-			}
+				&.extra-large {
+					width: 100%;
+				}
 
-			.icon.size .size-menu .size-option.large {
-				width: 90%;
-			}
+				&.large {
+					width: 90%;
+				}
 
-			.icon.size .size-menu .size-option.medium {
-				width: 80%;
-			}
+				&.medium {
+					width: 80%;
+				}
 
-			.icon.size .size-menu .size-option.small {
-				width: 70%;
+				&.small {
+					width: 70%;
+				}
 			}
+		}
 
-	.icon.color {
+		&:hover .size-menu {
+	    	animation: slideDown 0.3s;
+	    	display: unset;
+		}
+	}
+
+	&.color {
 	    position: relative;
 	    padding: 21px 0;
 	    vertical-align: bottom;
@@ -177,45 +186,39 @@ img {
 	    .selected {
 			width: 18px;
 			height: 18px;
-			margin: 0 0 0 -9px;
 		    padding: 5px 0;
 		    position: absolute;
 		    top: 12px;
-		    left: 50%;
+		    @include centerPositionedElement(18px);
 
 		    &.blue {
-				background-color: #81bce6;
+				background-color: $shirt-color-blue;
 			}
 
 			&.pink {
-				background-color: #cb6a97;
+				background-color: $shirt-color-pink;
 			}
 
 			&.orange {
-				background-color: #d6a367;
+				background-color: $shirt-color-orange;
 			}
 
 			&.green {
-				background-color: #78ae7e;
+				background-color: $shirt-color-green;
 			}
-		}
-
-		&:hover .selected {
-			border: 2px solid #fefefe;
 		}
 
 		.color-menu {
 			width: 145%;
-		    background-color: #fefefe;
+		    background-color: $main-bg-color;
 		    padding: 6%;
-		    border: 2px solid #69addc;
+		    border: $border-size solid $blue-color;
 		    position: absolute;
 		    bottom: 42px;
-		    left: 50%;
-		    margin-left: -72.5%;
 			display: none;
 		    z-index: 999;
 		    animation: slideUp 0.3s;
+		    @include centerPositionedElement(145%);
 
 		    .color-option {
 				width: 38%;
@@ -224,28 +227,35 @@ img {
 			    float: left;
 
 			    &.one {
-					background-color: #69addc;
+					background-color: $blue-color;
 				}
 
 				&.two {
-					background-color: #cb6a97;
+					background-color: $shirt-color-pink;
 				}
 
 				&.three {
-					background-color: #d6a367;
+					background-color: $shirt-color-orange;
 				}
 
 				&.four {
-					background-color: #78ae7e;
+					background-color: $shirt-color-green;
 				}
 			}
 		}
 
-		&:hover .color-menu {
-			display: unset;
-			animation: slideDown 0.3s;
+		&:hover {
+			.color-menu {
+				display: unset;
+				animation: slideDown 0.3s;
+			}
+
+			.selected {
+				border: $border-size solid $main-bg-color;
+			}
 		}
 	}
+}
 
 .details {
 	padding: 10px 0;
@@ -276,30 +286,4 @@ img {
 	.column {
 		width: 100%;
 	}
-}
-
-@keyframes slideDown {
-	0% { 
-	  	bottom: 100px;
-	  	opacity: 0;
-	  }
-
-  	10% {
-  		opacity: 0;
-  	}
-
-	100% { 
-		bottom: 42px; 
-		opacity: 1;
-	}
-}
-
-@keyframes slideUp {
-	  0% {
-	  	bottom: 42px;
-	  }
-
-	  100% {
-	  	bottom: 100px;
-	  }
 }
