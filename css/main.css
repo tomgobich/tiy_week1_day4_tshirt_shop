@@ -280,7 +280,7 @@ img {
 
 @keyframes slideDown {
 	0% { 
-	  	margin-top: -50px; 
+	  	bottom: 100px;
 	  	opacity: 0;
 	  }
 
@@ -289,17 +289,17 @@ img {
   	}
 
 	100% { 
-		margin-top: 0; 
+		bottom: 42px; 
 		opacity: 1;
 	}
 }
 
 @keyframes slideUp {
 	  0% {
-	  	margin-top: 0px;
+	  	bottom: 42px;
 	  }
 
 	  100% {
-	  	margin-top: -50px;
+	  	bottom: 100px;
 	  }
 }
